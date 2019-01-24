@@ -1,0 +1,9 @@
+.DS_Store
+dist
+node_modules
+.nyc_output
+.testcases
+build
+docs/build
+.idea/
+.outputParameter
