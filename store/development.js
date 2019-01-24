@@ -21,7 +21,7 @@ export default function configureStore(reducer, saga, initialState) {
     }),
 
     startOn: "SESSION_READY",
-    name: "truffle-debugger",
+    name: "ethereum-debugger",
     hostname: "localhost",
     port: 11117,
   });
