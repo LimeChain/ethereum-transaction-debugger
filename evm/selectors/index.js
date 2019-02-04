@@ -6,7 +6,7 @@ import levenshtein from "fast-levenshtein";
 
 import trace from "../../trace/selectors";
 
-import { isCallMnemonic } from "../../helpers";
+import { isCallMnemonic, isCreateMnemonic } from "../../helpers";
 
 function findContext({ address, binary }, instances, search, contexts) {
   let record;
@@ -64,7 +64,7 @@ function createStepSelectors(step, state = null) {
     /**
      * .isCreate
      */
-    isCreate: createLeaf(["./trace"], step => step.op == "CREATE"),
+    isCreate: createLeaf(["./trace"], step => isCreateMnemonic(step.op)),
 
     /**
      * .isHalting

@@ -1,13 +1,9 @@
 import debugModule from "debug";
 const debug = debugModule("debugger:ast:sagas");
 
-import { all, call, race, fork, join, take, takeEvery, put, select } from "redux-saga/effects";
-
-import { prefixName } from "../../helpers";
+import { all, call, select } from "redux-saga/effects";
 
 import * as data from "../../data/sagas";
-
-import * as actions from "../actions";
 
 import ast from "../selectors";
 
@@ -61,31 +57,14 @@ function* handleExit(sourceId, node, pointer) {
   // no-op right now
 }
 
-function* walkSaga({ sourceId, ast }) {
-  yield walk(sourceId, ast);
-}
-
-export function* visitAll(idx) {
+export function* visitAll() {
   let sources = yield select(ast.views.sources);
 
-  let tasks = yield all(
+  yield all(
     Object.entries(sources)
-      .filter(([id, { ast }]) => !!ast)
-      .map(([id, { ast }]) => fork(() => put(actions.visit(id, ast))))
+      .filter(([_, source]) => source.ast)
+      .map(([id, { ast }]) => call(walk, id, ast))
   );
 
-  if (tasks.length > 0) {
-    yield join(...tasks);
-  }
-
-  yield put(actions.doneVisiting());
+  debug("done visiting");
 }
-
-export function* saga() {
-  yield race({
-    visitor: takeEvery(actions.VISIT, walkSaga),
-    done: take(actions.DONE_VISITING)
-  });
-}
-
-export default prefixName("ast", saga);
