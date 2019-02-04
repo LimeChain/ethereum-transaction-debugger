@@ -37,9 +37,9 @@ export function isCallMnemonic(op) {
 
 
 /*
-* Given a mmemonic, determine whether it's the mnemonic of a creation
-* instruction
-*/
+ * Given a mmemonic, determine whether it's the mnemonic of a creation
+ * instruction
+ */
 export function isCreateMnemonic(op) {
   const creates = ["CREATE", "CREATE2"];
   return creates.includes(op);

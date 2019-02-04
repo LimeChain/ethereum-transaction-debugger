@@ -33,7 +33,7 @@ function* tickSaga() {
   let decode = yield select(data.views.decoder);
   let allocations = yield select(data.info.allocations.storage);
   let currentAssignments = yield select(data.proc.assignments);
-  let currentDepth = yield select(data.info.functionDepth);
+  let currentDepth = yield select(data.current.functionDepth);
   let address = yield select(data.current.address); //may be undefined
   let dummyAddress = yield select(data.current.dummyAddress);
 

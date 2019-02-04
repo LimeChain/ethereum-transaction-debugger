@@ -47,7 +47,7 @@ export function abbreviateValues(value, options = {}, depth = 0) {
   }
 }
 
-export default function configureStore (reducer, saga, initialState, composeEnhancers) {
+export default function configureStore(reducer, saga, initialState, composeEnhancers) {
   const sagaMiddleware = createSagaMiddleware();
 
   if (!composeEnhancers) {

@@ -3,7 +3,7 @@ export function start(txHash, provider) {
   return {
     type: START,
     txHash,
-provider
+    provider
   };
 }
 
@@ -27,7 +27,7 @@ export function recordContracts(contexts, sources) {
   return {
     type: RECORD_CONTRACTS,
     contexts,
-sources
+    sources
   };
 }
 
