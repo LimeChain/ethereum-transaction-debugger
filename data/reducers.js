@@ -87,7 +87,6 @@ const allocations = combineReducers({
   storage
 });
 
-
 const info = combineReducers({
   scopes,
   userDefinedTypes,

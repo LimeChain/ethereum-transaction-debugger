@@ -113,10 +113,6 @@ function* recordInstance(address, binary) {
   yield* evm.addInstance(address, binary);
 }
 
-function* recordUserDefinedTypes(sources) {
-  yield* data.recordUserDefinedTypes(sources);
-}
-
 function* ready() {
   yield put(actions.ready());
 }
