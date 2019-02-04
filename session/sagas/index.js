@@ -59,7 +59,7 @@ export default prefixName("session", saga);
 
 function* forkListeners() {
   return yield all(
-    [controller, data, evm, solidity, trace, web3].map(
+    [controller, data, evm, solidity, trace, ethers].map(
       app => fork(app.saga)
       //ast no longer has a listener
     )
