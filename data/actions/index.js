@@ -64,3 +64,11 @@ export function defineType(node) {
     node
   };
 }
+export const ALLOCATE = "ALLOCATE";
+export function allocate(storage) {
+  return {
+    type: ALLOCATE,
+    storage
+    //later there will be more
+  };
+}

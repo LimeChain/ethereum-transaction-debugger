@@ -13,6 +13,8 @@ import data from "../selectors";
 
 import * as TruffleDecodeUtils from "truffle-decode-utils";
 
+import { getStorageAllocations } from "truffle-decoder";
+
 export function* scope(nodeId, pointer, parentId, sourceId) {
   yield putResolve(actions.scope(nodeId, pointer, parentId, sourceId));
 }
