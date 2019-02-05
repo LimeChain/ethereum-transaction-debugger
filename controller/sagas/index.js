@@ -200,6 +200,9 @@ function* continueUntilBreakpoint() {
   let breakpointHit = false;
 
   currentLocation = yield select(controller.current.location);
+  if (!currentLocation.node) {
+    return;
+  }
   currentNode = currentLocation.node.id;
   currentLine = currentLocation.sourceRange.lines.start.line;
   currentSourceId = currentLocation.source.id;
