@@ -1,18 +1,22 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:controller:sagas");
 
-import { put, call, race, take, select } from "redux-saga/effects";
+const { put, call, race, take, select } = require("redux-saga/effects");
 
-import { prefixName } from "../../helpers";
+const { prefixName } = require("../../helpers");
 
-import * as trace from "../../trace/sagas";
-import * as data from "../../data/sagas";
-import * as evm from "../../evm/sagas";
-import * as solidity from "../../solidity/sagas";
+const trace = require("../../trace/sagas");
 
-import * as actions from "../actions";
+const data = require("../../data/sagas");
 
-import controller from "../selectors";
+const evm = require("../../evm/sagas");
+
+const solidity = require("../../solidity/sagas");
+
+const actions = require("../actions");
+
+const controller = require("../selectors");
 
 const CONTROL_SAGAS = {
   [actions.ADVANCE]: advance,

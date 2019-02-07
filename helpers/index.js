@@ -1,4 +1,4 @@
-import * as utils from "truffle-decode-utils";
+const utils = require("truffle-decode-utils");
 
 const stringify = require("json-stable-stringify");
 

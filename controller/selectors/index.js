@@ -1,12 +1,16 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:controller:sagas");
 
-import { createSelectorTree, createLeaf } from "reselect-tree";
+const { createSelectorTree, createLeaf } = require("reselect-tree");
 
-import evm from "../../evm/selectors";
-import solidity from "../../solidity/selectors";
-import ast from "../../ast/selectors";
-import trace from "../../trace/selectors";
+const evm = require("../../evm/selectors");
+
+const solidity = require("../../solidity/selectors");
+
+const ast = require("../../ast/selectors");
+
+const trace = require("../../trace/selectors");
 
 /**
  * @private

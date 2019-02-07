@@ -1,9 +1,11 @@
-import debugModule from "debug";
+
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:store:development");
 
-import { composeWithDevTools } from "remote-redux-devtools";
+const { composeWithDevTools } = require("remote-redux-devtools");
 
-import commonConfigure from "./common";
+const commonConfigure = require("./common");
 
 export default function configureStore(reducer, saga, initialState) {
   const composeEnhancers = composeWithDevTools({

@@ -1,15 +1,18 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:solidity:selectors");
 
-import { createSelectorTree, createLeaf } from "reselect-tree";
-import SolidityUtils from "truffle-solidity-utils";
-import CodeUtils from "truffle-code-utils";
+const { createSelectorTree, createLeaf } = require("reselect-tree");
+const SolidityUtils = require("truffle-solidity-utils");
+const CodeUtils = require("truffle-code-utils");
 
-import * as TruffleDecodeUtils from "truffle-decode-utils";
-import { findRange } from "../../ast/map";
-import jsonpointer from "json-pointer";
+const TruffleDecodeUtils = require("truffle-decode-utils");
 
-import evm from "../../evm/selectors";
+const { findRange } = require("../../ast/map");
+
+const jsonpointer = require("json-pointer");
+
+const evm = require("../../evm/selectors");
 
 const semver = require("semver");
 

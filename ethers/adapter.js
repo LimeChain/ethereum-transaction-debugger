@@ -1,4 +1,4 @@
-import debugModule from "debug";
+const debugModule = require("debug");
 
 const ethers = require('ethers');
 

@@ -1,13 +1,14 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:solidity:sagas");
 
-import { call, put, take, select } from "redux-saga/effects";
-import { prefixName } from "../../helpers";
+const { call, put, take, select } = require("redux-saga/effects");
+const { prefixName } = require("../../helpers");
 
-import * as actions from "../actions";
-import { TICK } from "../../trace/actions";
+const actions = require("../actions");
+const { TICK } = require("../../trace/actions");
 
-import solidity from "../selectors";
+const solidity = require("../selectors");
 
 export function* addSource(source, sourcePath, ast) {
   yield put(actions.addSource(source, sourcePath, ast));

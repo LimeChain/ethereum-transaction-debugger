@@ -1,12 +1,14 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:ast:selectors");
 
-import { createSelectorTree, createLeaf } from "reselect-tree";
-import jsonpointer from "json-pointer";
+const { createSelectorTree, createLeaf } = require("reselect-tree");
 
-import solidity from "../../solidity/selectors";
+const jsonpointer = require("json-pointer");
 
-import { findRange } from "../map";
+const solidity = require("../../solidity/selectors");
+
+const { findRange } = require("../map");
 
 
 /**

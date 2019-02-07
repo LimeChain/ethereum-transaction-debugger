@@ -1,7 +1,8 @@
-import { combineReducers } from "redux";
+const { combineReducers } = require("redux");
 
-import * as actions from "./actions";
-import { keccak256 } from "../helpers";
+const action = require("./actions");
+
+const { keccak256 } = require("../helpers");
 
 const DEFAULT_CONTEXTS = {
   byContext: {},

@@ -1,10 +1,13 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:store:common");
 const reduxDebug = debugModule("debugger:redux");
 
-import { compose, createStore, applyMiddleware } from "redux";
-import createSagaMiddleware from "redux-saga";
-import createLogger from "redux-cli-logger";
+const { compose, createStore, applyMiddleware } = require("redux");
+
+const createSagaMiddleware = require("redux-saga");
+
+const createLogger = require("redux-cli-logger");
 
 export function abbreviateValues(value, options = {}, depth = 0) {
   options.stringLimit = options.stringLimit || 66;

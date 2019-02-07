@@ -1,19 +1,20 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:session:sagas");
 
-import { call, all, fork, take, put } from "redux-saga/effects";
+const { call, all, fork, take, put } = require("redux-saga/effects");
 
-import { prefixName } from "../../helpers";
+const { prefixName } = require("../../helpers");
 
-import * as ast from "../../ast/sagas";
-import * as controller from "../../controller/sagas";
-import * as solidity from "../../solidity/sagas";
-import * as evm from "../../evm/sagas";
-import * as trace from "../../trace/sagas";
-import * as data from "../../data/sagas";
-import * as ethers from "../../ethers/sagas";
+const ast = require("../../ast/sagas");
+const controller = require("../../controller/sagas");
+const solidity = require("../../solidity/sagas");
+const evm = require("../../evm/sagas");
+const trace = require("../../trace/sagas");
+const data = require("../../data/sagas");
+const ethers = require("../../ethers/sagas");
 
-import * as actions from "../actions";
+const actions = require("../actions");
 
 export function* saga() {
   debug("starting listeners");

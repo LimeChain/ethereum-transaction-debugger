@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
+const { combineReducers } = require("redux");
 
-import * as actions from "./actions";
+const actions = require("./actions");
 
 export function index(state = 0, action) {
   switch (action.type) {

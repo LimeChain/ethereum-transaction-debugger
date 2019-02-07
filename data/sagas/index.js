@@ -1,19 +1,22 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:data:sagas"); // eslint-disable-line no-unused-vars
 
-import { put, takeEvery, select, call, putResolve } from "redux-saga/effects";
-import jsonpointer from "json-pointer";
+const { put, takeEvery, select, call, putResolve } = require("redux-saga/effects");
 
-import { prefixName, stableKeccak256 } from "../../helpers";
+const jsonpointer = require("json-pointer");
 
-import { TICK } from "../../trace/actions";
-import * as actions from "../actions";
+const { prefixName, stableKeccak256 } = require("../../helpers");
 
-import data from "../selectors";
+const { TICK } = require("../../trace/actions");
 
-import * as TruffleDecodeUtils from "truffle-decode-utils";
+const actions = require("../actions");
 
-import { getStorageAllocations } from "truffle-decoder";
+const data = require("../selectors");
+
+const TruffleDecodeUtils = require("truffle-decode-utils");
+
+const { getStorageAllocations } = require("truffle-decoder");
 
 export function* scope(nodeId, pointer, parentId, sourceId) {
   yield putResolve(actions.scope(nodeId, pointer, parentId, sourceId));

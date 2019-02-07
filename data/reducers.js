@@ -1,11 +1,12 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:data:reducers");
 
-import { combineReducers } from "redux";
+const { combineReducers } = require("redux");
 
-import { stableKeccak256 } from "../helpers";
+const stableKeccak256 = require("../helpers");
 
-import * as actions from "./actions";
+const actions = require("./actions");
 
 const DEFAULT_SCOPES = {
   byId: {}

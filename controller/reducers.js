@@ -1,9 +1,10 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:controller:reducers"); //eslint-disable-line no-unused-vars
 
-import { combineReducers } from "redux";
+const { combineReducers } = require("redux");
 
-import * as actions from "./actions";
+const actions = require("./actions");
 
 function breakpoints(state = [], action) {
   switch (action.type) {

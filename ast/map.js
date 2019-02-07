@@ -1,7 +1,8 @@
-import debugModule from "debug";
+
+const debugModule = require("debug");
 const debug = debugModule("debugger:ast:map");
 
-import IntervalTree from "node-interval-tree";
+const IntervalTree = require("node-interval-tree");
 
 
 /**

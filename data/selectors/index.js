@@ -1,17 +1,22 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:data:selectors"); // eslint-disable-line no-unused-vars
 
-import { createSelectorTree, createLeaf } from "reselect-tree";
-import jsonpointer from "json-pointer";
+const { createSelectorTree, createLeaf } = require("reselect-tree");
 
-import { stableKeccak256 } from "../../helpers";
+const jsonpointer = require("json-pointer");
 
-import ast from "../../ast/selectors";
-import evm from "../../evm/selectors";
-import solidity from "../../solidity/selectors";
+const { stableKeccak256 } = require("../../helpers");
 
-import * as TruffleDecodeUtils from "truffle-decode-utils";
-import { forEvmState } from "truffle-decoder";
+const ast = require("../../ast/selectors");
+
+const evm = require("../../evm/selectors");
+
+const solidity = require("../../solidity/selectors");
+
+const TruffleDecodeUtils = require("truffle-decode-utils");
+
+const { forEvmState } = require("truffle-decoder");
 
 /**
  * @private

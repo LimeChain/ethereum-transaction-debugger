@@ -1,8 +1,9 @@
-import { combineReducers } from "redux";
 
-import { keccak256 } from "../helpers";
+const { combineReducers } = require("redux");
 
-import * as actions from "./actions";
+const { keccak256 } = require("../helpers");
+
+const actions = require("./actions");
 
 const DEFAULT_SOURCES = {
   byId: {}

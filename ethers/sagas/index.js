@@ -1,13 +1,16 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:ethersJS:sagas");
 
-import { all, takeEvery, apply, fork, join, take, put, select } from 'redux-saga/effects';
-import { prefixName } from "../../helpers";
+const { all, takeEvery, apply, fork, join, take, put, select } = require('redux-saga/effects');
 
-import * as actions from "../actions";
-import * as session from "../../session/actions";
+const { prefixName } = require("../../helpers");
 
-import EthersJSAdapter from "../adapter";
+const actions = require("../actions");
+
+const session = require("../../session/actions");
+
+const EthersJSAdapter = require("../adapter");
 
 function* fetchTransactionInfo(adapter, { txHash }) {
   debug("inspecting transaction");

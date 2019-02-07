@@ -1,12 +1,13 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:trace:sagas");
 
-import { take, takeEvery, put, select } from "redux-saga/effects";
-import { prefixName, isCallMnemonic } from "../../helpers";
+const { take, takeEvery, put, select } = require("redux-saga/effects");
+const { prefixName, isCallMnemonic } = require("../../helpers");
 
-import * as actions from "../actions";
+const actions = require("../actions");
 
-import trace from "../selectors";
+const trace = require("../selectors");
 
 function* waitForTrace() {
   let { steps } = yield take(actions.SAVE_STEPS);

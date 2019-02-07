@@ -1,14 +1,15 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:session"); //eslint-disable-line no-unused-vars
 
-import configureStore from "../store";
+const configureStore = require("../store");
 
-import * as controller from "../controller/actions";
-import * as actions from "./actions";
-import data from "../data/selectors";
+const controller = require("../controller/actions");
+const actions = require("./actions");
+const data = require("../data/selectors");
 
-import rootSaga from "./sagas";
-import reducer from "./reducers";
+const rootSaga = require("./sagas");
+const reducer = require("./reducers");
 
 /**
  * Debugger Session

@@ -1,4 +1,4 @@
-import { createSelectorTree, createLeaf } from "reselect-tree";
+const { createSelectorTree, createLeaf } = require("reselect-tree");
 
 let trace = createSelectorTree({
   /**

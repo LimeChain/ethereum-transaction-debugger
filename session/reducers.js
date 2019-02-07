@@ -1,12 +1,12 @@
-import { combineReducers } from "redux";
+const { combineReducers } = require("redux");
 
-import data from "../data/reducers";
-import evm from "../evm/reducers";
-import solidity from "../solidity/reducers";
-import trace from "../trace/reducers";
-import controller from "../controller/reducers";
+const data = require("../data/reducers");
+const evm = require("../evm/reducers");
+const solidity = require("../solidity/reducers");
+const trace = require("../trace/reducers");
+const controller = require("../controller/reducers");
 
-import * as actions from "./actions";
+const actions = require("./actions");
 
 export const WAITING = "WAITING";
 export const ACTIVE = "ACTIVE";

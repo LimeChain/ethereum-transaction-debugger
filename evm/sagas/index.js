@@ -1,16 +1,20 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:evm:sagas");
 
-import { call, put, take, select } from "redux-saga/effects";
-import { prefixName, keccak256 } from "../../helpers";
-import * as TruffleDecodeUtils from "truffle-decode-utils";
+const { call, put, take, select } = require("redux-saga/effects");
 
-import { TICK } from "../../trace/actions";
-import * as actions from "../actions";
+const { prefixName, keccak256 } = require("../../helpers");
 
-import evm from "../selectors";
+const TruffleDecodeUtils = require("truffle-decode-utils");
 
-import * as data from "../../data/sagas";
+const { TICK } = require("../../trace/actions");
+
+const actions = require("../actions");
+
+const evm = require("../selectors");
+
+const data = require("../../data/sagas");
 
 /**
  * Adds EVM bytecode context

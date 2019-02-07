@@ -1,11 +1,12 @@
-import debugModule from "debug";
+const debugModule = require('debug');
+
 const debug = debugModule("debugger:ast:sagas");
 
-import { all, call, select } from "redux-saga/effects";
+const { all, call, select } = require("redux-saga/effects");
 
-import * as data from "../../data/sagas";
+const data = require("../../data/sagas");
 
-import ast from "../selectors";
+const ast = require("../selectors");
 
 
 function* walk(sourceId, node, pointer = "", parentId = null) {

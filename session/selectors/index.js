@@ -1,10 +1,12 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:session:selectors");
 
-import { createSelectorTree, createLeaf } from "reselect-tree";
+const { createSelectorTree, createLeaf } = require("reselect-tree");
 
-import evm from "../../evm/selectors";
-import solidity from "../../solidity/selectors";
+const evm = require("../../evm/selectors");
+
+const solidity = require("../../solidity/selectors");
 
 const session = createSelectorTree({
   /**

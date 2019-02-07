@@ -1,12 +1,14 @@
-import debugModule from "debug";
+const debugModule = require("debug");
+
 const debug = debugModule("debugger:evm:selectors"); // eslint-disable-line no-unused-vars
 
-import { createSelectorTree, createLeaf } from "reselect-tree";
-import levenshtein from "fast-levenshtein";
+const { createSelectorTree, createLeaf } = require("reselect-tree");
 
-import trace from "../../trace/selectors";
+const levenshtein = require("fast-levenshtein");
 
-import { isCallMnemonic, isCreateMnemonic } from "../../helpers";
+const trace = require("../../trace/selectors");
+
+const { isCallMnemonic, isCreateMnemonic } = require("../../helpers");
 
 function findContext({ address, binary }, instances, search, contexts) {
   let record;

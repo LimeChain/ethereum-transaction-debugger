@@ -1,16 +1,23 @@
-import debugModule from 'debug';
 
-import Session from "./session";
+const debugModule = require('debug');
 
-import { createNestedSelector } from "reselect-tree";
+const Session = require("./session");
 
-import dataSelector from "./data/selectors";
-import astSelector from "./ast/selectors";
-import traceSelector from "./trace/selectors";
-import evmSelector from "./evm/selectors";
-import soliditySelector from "./solidity/selectors";
-import sessionSelector from "./session/selectors";
-import controllerSelector from "./controller/selectors";
+const { createNestedSelector } = require("reselect-tree");
+
+const dataSelector = require("./data/selectors");
+
+const astSelector = require("./ast/selectors");
+
+const traceSelector = require("./trace/selectors");
+
+const evmSelector = require("./evm/selectors");
+
+const soliditySelector = require("./solidity/selectors");
+
+const sessionSelector = require("./session/selectors");
+
+const controllerSelector = require("./controller/selectors");
 
 const debug = debugModule("debugger");
 
