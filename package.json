@@ -2,9 +2,10 @@
   "name": "ethereum-transaction-debugger",
   "version": "1.0.0",
   "description": "",
-  "main": "debugger.js",
+  "main": "dist/debugger.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "npm run build",
+    "build": "webpack --config webpack/webpack.config.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,26 @@
     "truffle-decoder": "1.0.3",
     "truffle-solidity-utils": "1.2.1",
     "ethers": "4.0.21"
+  },
+  "devDependencies": {
+    "async": "2.6.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-runtime": "^6.26.0",
+    "change-case": "^3.0.2",
+    "faker": "^4.1.0",
+    "fs-extra": "6.0.1",
+    "mocha": "5.2.0",
+    "mocha-webpack": "^1.1.0",
+    "node-interval-tree": "^1.3.3",
+    "nyc": "^13.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-merge": "^4.1.1",
+    "webpack-node-externals": "^1.6.0",
+    "write-file-webpack-plugin": "^4.2.0"
   }
 }
