@@ -27,6 +27,7 @@
     "truffle-decode-utils": "1.0.2",
     "truffle-decoder": "1.0.3",
     "truffle-solidity-utils": "1.2.1",
-    "ethers": "4.0.21"
+    "ethers": "4.0.21",
+    "esm": "^3.0.84"
   }
 }
