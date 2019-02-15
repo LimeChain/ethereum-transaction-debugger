@@ -54,6 +54,8 @@ let { ast, data, evm, solidity, trace } = Debugger.selectors;
 
 let variables = session.view(data.current.identifiers.native);
 let sourceRange = session.view(solidity.current.sourceRange);
+```
+
 
 ### License
 MIT
