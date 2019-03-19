@@ -28,7 +28,7 @@
     "truffle-decode-utils": "^1.0.4",
     "truffle-decoder": "^2.0.1",
     "truffle-solidity-utils": "^1.2.2",
-    "ethers": "4.0.21",
+    "ethers": "^4.0.27",
     "bn.js": "^4.11.8",
     "debug": "^4.1.0"
   },
